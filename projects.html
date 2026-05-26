@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Jhon Luay</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop hidden>
+  <source src="assets/music/background1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="page">
+
+  <!-- Header -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span>Jhon Luay</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="process.html">Process</a>
+      <a href="contact.html">Contact</a>
+      <a href="message-me.html">Message Me</a>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" type="button">
+      <span class="toggle-track">
+        <span class="toggle-thumb"></span>
+      </span>
+      <span class="toggle-text" id="themeLabel">Light</span>
+    </button>
+  </header>
+
+  <!-- Main -->
+  <main class="section content-page">
+
+    <div class="section-heading">
+      <h1>Featured Projects</h1>
+      <p>I specialize in Prompt Engineering, creating AI-driven content through precise prompt design for character storytelling, comedy-horror concepts, AI conversational systems, and 3D animation experiences.</p>
+    </div>
+
+    <div class="grid cards">
+
+      <!-- Project 1 -->
+      <article class="card project-card">
+        <video autoplay muted loop playsinline width="100%" preload="auto">
+          <source src="assets/videos/project1.mp4" type="video/mp4">
+        </video>
+        <h3>Anya Character Content Niche</h3>
+        <p>focused character-driven creative content featuring Anya Forger style storytelling.</p>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card project-card">
+        <video autoplay muted loop playsinline width="100%" preload="auto">
+          <source src="assets/videos/project2.mp4" type="video/mp4">
+        </video>
+        <h3>Comedy–Horror Entertainment Niche</h3>
+        <p>AI-generated talking content, virtual dialogue systems, and interactive voice experiences</p>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card project-card">
+        <video autoplay muted loop playsinline width="100%" preload="auto">
+          <source src="assets/videos/project3.mp4" type="video/mp4">
+        </video>
+        <h3>AI Conversational Content Niche</h3>
+        <p>AI-generated talking content, virtual dialogue systems, and interactive voice experiences</p>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="card project-card">
+        <video autoplay muted loop playsinline width="100%" preload="auto">
+          <source src="assets/videos/project4.mp4" type="video/mp4">
+        </video>
+        <h3>3D Skeleton Animation Niche</h3>
+        <p>stylized skeletal 3D animation, motion design, and digital character visualization</p>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Jhon Luay. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<!-- Background Music Script -->
+<script>
+const bgMusic = document.getElementById("bgMusic");
+
+window.addEventListener("load", () => {
+  bgMusic.volume = 0.35;
+
+  const startMusic = () => {
+    bgMusic.play().catch(() => {});
+  };
+
+  document.addEventListener("click", startMusic, { once: true });
+  document.addEventListener("touchstart", startMusic, { once: true });
+});
+</script>
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/typing.js"></script>
+<script src="assets/js/effects.js"></script>
+
+</body>
+</html>

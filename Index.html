@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jhon Luay Portfolio" />
+  <title>Jhon Luay | Portfolio</title>
+
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+
+  <audio id="bgMusic" loop hidden>
+    <source src="assets/music/background1.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="page">
+
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span>Jhon Luay</span>
+      </a>
+
+      <nav class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="process.html">Process</a>
+        <a href="contact.html">Contact</a>
+        <a href="message-me.html">Message Me</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle">
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+        </span>
+        <span class="toggle-text" id="themeLabel">Light</span>
+      </button>
+    </header>
+
+    <main>
+
+      <section class="hero">
+
+        <div class="hero-content">
+          <p class="eyebrow">Portfolio Website</p>
+          
+          <h1 class="typing-header" style="display: inline-block; min-height: 1.2em; vertical-align: middle;">
+            <span class="typing-text"></span><span class="typing-cursor">|</span>
+          </h1>
+          
+          <p class="hero-text">
+            A minimal portfolio with sharp typography, strong contrast, and seamless light/dark mode switching.
+          </p>
+
+          <div class="hero-actions">
+            <a href="projects.html" class="btn btn-primary">View Projects</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="assets/images/profile.png" alt="Jhon Luay Profile" />
+          <h2>Jhon Luay</h2>
+          <p>Creative Frontend Developer</p>
+        </div>
+
+      </section>
+
+      <section class="section">
+        <article class="card">
+          <h3>My Unique Skills</h3>
+
+          <p>
+            I combine creative design thinking with frontend development to build
+            visually striking, responsive, and interactive digital experiences.
+          </p>
+
+          <p>
+            My strengths include modern UI/UX design, clean code structure,
+            animation systems, dark/light mode implementation, responsive layouts,
+            and cinematic portfolio experiences.
+          </p>
+
+          <p>
+            I focus on precision, performance, creativity, and transforming ideas
+            into polished digital products.
+          </p>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>Featured Projects</h2>
+        </div>
+
+        <div class="grid cards">
+
+          <article class="card">
+            <video autoplay muted loop playsinline width="100%" preload="auto">
+              <source src="assets/videos/gif1.mp4" type="video/mp4">
+            </video>
+          <h1>Portfolio Web Experience Design</h1>
+            <h4>Designed and developed a responsive minimalist portfolio website with dynamic dark mode, smooth animations, interactive navigation, and cinematic user experience.</h4>
+          </article>
+            
+          <article class="card">
+            <video autoplay muted loop playsinline width="100%" preload="auto">
+              <source src="assets/videos/gif2.mp4" type="video/mp4">
+            </video>
+            <h1>AI-Optimized Cloud Workflow System</h1>
+            <h4>Automates script generation, title creation, image prompting, motion direction, descriptions, and strategic hashtag generation.</h4>
+          </article>
+
+          <article class="card">
+            <video autoplay muted loop playsinline width="100%" preload="auto">
+              <source src="assets/videos/gif3.mp4" type="video/mp4">
+            </video>
+            <h1>Professional Visual Design outputs</h1>
+            <h4>Designed professional visual assets including posters, branding layouts, promotional graphics, and minimalist digital compositions with strong visual hierarchy and modern design principles.</h4>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Jhon Luay. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const bgMusic = document.getElementById("bgMusic");
+
+    window.addEventListener("load", () => {
+      bgMusic.volume = 0.35;
+
+      const startMusic = () => {
+        bgMusic.play().catch(() => {});
+      };
+
+      document.addEventListener("click", startMusic, { once: true });
+      document.addEventListener("touchstart", startMusic, { once: true });
+    });
+  </script>
+
+  <script>
+    (function() {
+      const words = ["HELLO", "IM JHON LUAY", "CAPCUT VIDEO EDITOR", "FRONTEND DEVELOPER", "UI WEB DESIGNER","CANVA GRAPHIC DESIGNER"];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typingTimeout;
+
+      function typeEffect() {
+        const typingTextSpan = document.querySelector(".typing-text");
+        
+        if (!typingTextSpan) {
+          typingTimeout = setTimeout(typeEffect, 50);
+          return;
+        }
+
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+          typingTextSpan.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          typingTextSpan.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 50 : 100; 
+
+        if (!isDeleting && charIndex === currentWord.length) {
+          typeSpeed = 1500; 
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length; 
+          typeSpeed = 300; 
+        }
+
+        clearTimeout(typingTimeout);
+        typingTimeout = setTimeout(typeEffect, typeSpeed);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", typeEffect);
+      } else {
+        typeEffect();
+      }
+    })();
+  </script>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/effects.js"></script>
+
+</body>
+</html>
